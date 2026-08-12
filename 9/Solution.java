@@ -3,8 +3,8 @@ class Solution {
         boolean isPal = true;
         String strx = String.valueOf(x);
         char[] chars = strx.toCharArray();
-        int end = chars.length;
         int
+            end = chars.length,
             left = 0,
             right = end - 1;
 
