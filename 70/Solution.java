@@ -1,17 +1,18 @@
 class Solution {
     public int climbStairs(int n) {
-        return climbing(n);
-    }
-
-    public int climbing(int n) {
-        int result = 0;
-        
         if (n <= 2) {
-            result = n;
-        } else {
-            result = (climbing(n - 1) + climbing (n - 2));
+            return n;
+        }
+        
+        int[] arr = new int[n];
+        arr[0] = 1;
+        arr[1] = 2;
+
+        for (int i = 2; i <= (n - 1); i++) {
+            arr[i] = arr[i - 1] + arr[i - 2];
         }
 
-        return result;
+        return arr[arr.length - 1];
     }
 }
+
