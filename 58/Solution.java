@@ -4,22 +4,16 @@ class Solution {
 
         int
             lengthOfLastWord = 0,
-            end = chars.length - 1,
-            ptr = 0;
+            lastIndex = chars.length - 1,
+            i = lastIndex;
 
-        for (int i = end; i >= 0; i--) {
-            if (chars[i] == ' ') {
-                continue;
-            } else {
-                ptr = i;
-                lengthOfLastWord++;
-                i = -1;
-            }
+        while (chars[i] == ' ') {
+            i--;
         }
 
-        while (chars[ptr-1] != ' ') {
-            lengthOfLastWord++;
-            ptr--;
+        while ((i >= 0) && (chars[i] != ' ')) {
+            lengthOfLastWord++; 
+            i--;
         }
         
         return lengthOfLastWord; 
